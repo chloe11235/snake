@@ -45,26 +45,26 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // ucLastName
+            // ucScore
             // 
             this.ucScore.EmptyText = null;
             this.ucScore.Location = new System.Drawing.Point(21, 72);
             this.ucScore.MaximumSize = new System.Drawing.Size(2048, 40);
             this.ucScore.MinimumSize = new System.Drawing.Size(0, 40);
-            this.ucScore.Name = "ucLastName";
-            this.ucScore.PropertyLabel = "LastName";
+            this.ucScore.Name = "ucScore";
+            this.ucScore.PropertyLabel = "Score";
             this.ucScore.PropertyValue = "";
             this.ucScore.Size = new System.Drawing.Size(213, 40);
             this.ucScore.TabIndex = 4;
             // 
-            // ucFirstName
+            // ucPseudo
             // 
-            this.ucPseudo.EmptyText = "Saisissez votre nom";
+            this.ucPseudo.EmptyText = "Saisissez votre Pseudo";
             this.ucPseudo.Location = new System.Drawing.Point(21, 26);
             this.ucPseudo.MaximumSize = new System.Drawing.Size(2048, 40);
             this.ucPseudo.MinimumSize = new System.Drawing.Size(0, 40);
-            this.ucPseudo.Name = "ucFirstName";
-            this.ucPseudo.PropertyLabel = "FirstName";
+            this.ucPseudo.Name = "ucPseudo";
+            this.ucPseudo.PropertyLabel = "Pseudo";
             this.ucPseudo.PropertyValue = "";
             this.ucPseudo.Size = new System.Drawing.Size(213, 40);
             this.ucPseudo.TabIndex = 3;
