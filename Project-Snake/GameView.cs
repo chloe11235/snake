@@ -10,18 +10,24 @@ namespace Project_Snake
     class GameView: Panel
 
     {
+        GameElement Exemple = new GameElement(  );
+
         public   GameView()
         { 
-           this.Width = 10*scaleDef.ScaleWidth;
+          
 
-            
+            //panel
+          this.Location = new System.Drawing.Point(62, 132);
+           this.BackColor = System.Drawing.SystemColors.ControlDark;
+          this.Name = "panel";
+           this.Size = new System.Drawing.Size(10*Exemple.Width, 10*Exemple.Height);
+           //this.Show();
+           this.Enabled = true;
+           this.Visible = true;
         }
 
-        
 
-       
-        
-       
+         
         
     }
 
@@ -29,6 +35,8 @@ namespace Project_Snake
     {
         private int scaleHeight=10;
         private int scaleWidth=10;
+        private int nbScaleVert = 10;
+        private int nbScaleHor = 10;
 
         public int ScaleWidth
         {
