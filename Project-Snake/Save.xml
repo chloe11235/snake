@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<main>
+  <object type="save">
+    <nom>Toto</nom>
+    <detail>score="42"</detail>
+  </object>
+</main>

@@ -19,11 +19,12 @@ namespace SaveList
             m_saveList = new List<Save>();
         }
 
+        /*
         public void Add(string Pseudo, uint score)
         {
             uint cpt = (uint)m_saveList.Count;
             m_saveList.Add(new Save(Pseudo, score, cpt));
-        }
+        }*/
 
         public void DisplayAll()
         {

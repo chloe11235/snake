@@ -53,8 +53,6 @@ namespace SaveList
 
         #endregion Constructeur Declaration
 
-        //Affichage via user control
-
     }
 
     /*
