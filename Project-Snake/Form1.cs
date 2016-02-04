@@ -18,6 +18,7 @@ namespace Project_Snake
             
         }
 
+        
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
                     }
@@ -26,5 +27,33 @@ namespace Project_Snake
         {
 
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+{
+switch (keyData)
+ {
+ case Keys.Right:
+        MessageBox.Show("droite","droite",MessageBoxButtons.OK);
+        return true;
+        break;
+ case Keys.Left:
+        MessageBox.Show("gauche","gauche",MessageBoxButtons.OK);
+        return true;
+        break;
+ case Keys.Up:
+        MessageBox.Show("haut","haut",MessageBoxButtons.OK);
+        return true;
+        break;
+ case Keys.Down:
+        MessageBox.Show("bas","bas",MessageBoxButtons.OK);
+        return true;
+        break;
+ 
+ 
+ default:
+ return base.ProcessCmdKey(ref msg, keyData);
+ }
+}
+
     }
 }
