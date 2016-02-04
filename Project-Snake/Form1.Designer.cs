@@ -30,33 +30,43 @@
         {
             this.NewGame = new System.Windows.Forms.Button();
             this.Score = new System.Windows.Forms.Button();
+            GameView MainView = new GameView();
+
             this.SuspendLayout();
             // 
             // NewGame
             // 
-            this.NewGame.Location = new System.Drawing.Point(13, 13);
+            this.NewGame.Location = new System.Drawing.Point(20, 20);
+            this.NewGame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NewGame.Name = "NewGame";
-            this.NewGame.Size = new System.Drawing.Size(75, 23);
+            this.NewGame.Size = new System.Drawing.Size(112, 35);
             this.NewGame.TabIndex = 0;
             this.NewGame.Text = "New Game";
             this.NewGame.UseVisualStyleBackColor = true;
             // 
             // Score
             // 
-            this.Score.Location = new System.Drawing.Point(143, 12);
+            this.Score.Location = new System.Drawing.Point(214, 18);
+            this.Score.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Score.Name = "Score";
-            this.Score.Size = new System.Drawing.Size(75, 23);
+            this.Score.Size = new System.Drawing.Size(112, 35);
             this.Score.TabIndex = 1;
             this.Score.Text = "Score";
             this.Score.UseVisualStyleBackColor = true;
             // 
+         
+
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 261);
+            this.ClientSize = new System.Drawing.Size(502, 402);
+           
             this.Controls.Add(this.Score);
             this.Controls.Add(this.NewGame);
+            this.Controls.Add(MainView);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
