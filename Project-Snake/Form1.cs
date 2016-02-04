@@ -15,6 +15,16 @@ namespace Project_Snake
         public Form1()
         {
             InitializeComponent();
+            
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+                    }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
