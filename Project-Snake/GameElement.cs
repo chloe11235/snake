@@ -30,6 +30,11 @@ namespace Project_Snake
             set { posY = value; }
         }
 
+        public GameElement()
+        {
+            this.Height = 10;
+            this.Width = 10;
+        }
         public GameElement (ElementName type, int x, int y)
         {
             Nom = type; 
@@ -39,7 +44,9 @@ namespace Project_Snake
             this.Width = 10;
         }
        
+        
     }
+
 }
 
 
