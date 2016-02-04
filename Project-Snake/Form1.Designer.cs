@@ -30,6 +30,7 @@
         {
             this.NewGame = new System.Windows.Forms.Button();
             this.Score = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // NewGame
@@ -50,11 +51,20 @@
             this.Score.Text = "Score";
             this.Score.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Location = new System.Drawing.Point(14, 62);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(295, 178);
+            this.panel1.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(335, 261);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Score);
             this.Controls.Add(this.NewGame);
             this.Name = "Form1";
@@ -67,6 +77,7 @@
 
         private System.Windows.Forms.Button NewGame;
         private System.Windows.Forms.Button Score;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

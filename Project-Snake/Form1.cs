@@ -12,12 +12,16 @@ namespace Project_Snake
 {
     public partial class Form1 : Form
     {
+        GameElement exemple = new GameElement();
         public Form1()
         {
             InitializeComponent();
+            panel1.Height = 10 * exemple.Height;
+            panel1.Width = 10 * exemple.Width;
             
         }
 
+        
         
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
