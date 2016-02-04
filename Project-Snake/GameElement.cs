@@ -10,7 +10,7 @@ namespace Project_Snake
     
     class GameElement : PictureBox
     {
-        public enum ElementName { SNAKEHEAD, SNAKEBODY, FRUIT, WALL };
+        public enum ElementName : int { SNAKEHEAD=0, SNAKEBODY, FRUIT, WALL };
 
         private ElementName Nom;
 
