@@ -30,12 +30,12 @@
         {
             this.NewGame = new System.Windows.Forms.Button();
             this.Score = new System.Windows.Forms.Button();
-<<<<<<< HEAD
+
             GameView MainView = new GameView();
 
-=======
             this.panel1 = new System.Windows.Forms.Panel();
->>>>>>> 6c3566dd55c37c83888678e48fad95b496ded94d
+
+
             this.SuspendLayout();
             // 
             // NewGame
@@ -58,30 +58,28 @@
             this.Score.Text = "Score";
             this.Score.UseVisualStyleBackColor = true;
             // 
-<<<<<<< HEAD
+
          
 
-=======
-            // panel1
+    // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(14, 62);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(295, 178);
             this.panel1.TabIndex = 2;
->>>>>>> 6c3566dd55c37c83888678e48fad95b496ded94d
+
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
+
             this.ClientSize = new System.Drawing.Size(502, 402);
            
-=======
             this.ClientSize = new System.Drawing.Size(335, 261);
             this.Controls.Add(this.panel1);
->>>>>>> 6c3566dd55c37c83888678e48fad95b496ded94d
+
             this.Controls.Add(this.Score);
             this.Controls.Add(this.NewGame);
             this.Controls.Add(MainView);
