@@ -16,8 +16,8 @@ namespace Project_Snake
         public Form1()
         {
             InitializeComponent();
-            panel1.Height = 10 * exemple.Height;
-            panel1.Width = 10 * exemple.Width;
+            panel1.Height = 15 * exemple.Height;
+            panel1.Width = 30 * exemple.Width;
             
         }
 
