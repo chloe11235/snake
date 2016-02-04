@@ -11,22 +11,15 @@ namespace Project_Snake
     class GameView: Panel
 
     {
-        GameElement Exemple = new GameElement(  );
+        GameElement Exemple = new GameElement();
 
         public   GameView()
-        { 
-          
-
-            //panel
-          this.Location = new System.Drawing.Point(0, 0);
-           //this.BackColor = System.Drawing.SystemColors.ControlDark;
-          this.Name = "panel";
-          this.BackColor = Color.Black;
-           this.Size = new System.Drawing.Size(10*Exemple.Width, 10*Exemple.Height);
-           //this.Show();
-           this.Enabled = true;
-           this.Visible = true;
-           this.Show();
+        {
+            this.Location = new System.Drawing.Point(80, 110);
+            this.Name = "panel2";
+            this.Size = new System.Drawing.Size(372, 233);
+            this.TabIndex = 3;
+            this.BackColor = Color.Black;
         }
 
 
