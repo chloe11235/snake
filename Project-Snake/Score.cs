@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace StudentList
+namespace SaveList
 {
     /*
      * Si serpent touche un mur ou une partie de son corps
@@ -77,4 +77,22 @@ void calcul_score(int score)
     {
         score++;
     }
+}*/
+
+//Issu du lab de la prof sur l'XML
+/*Pour créer un container avec les données rentrées 
+ *  appeler quand on appuie sur OK après avoir renseigné pseudo et score
+*/
+/*
+static void CreateSaveInstances(SaveContainer container)
+{
+    container.Add(ucPseudo,ucScore);
+}
+*/
+
+/*
+ *  Pour afficher un containeur (à appeler quand on clique sur score)
+static void ReadSaveInstances(SaveContainer container)
+{
+    container.Load();
 }*/

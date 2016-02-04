@@ -22,6 +22,10 @@ namespace DemoUserControl
         private void btnOK_Click(object sender, EventArgs e)
         {
             TheValue = this.ucPseudo.Text + " " + this.ucScore.Text;
+
+            /* Création d'un containeur
+             * StudentContainer container = new StudentContainer();
+             */
         }
     }
 }
