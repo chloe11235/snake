@@ -77,11 +77,13 @@ switch (keyData)
             {
                 NewGame.Text = "Stop";
                 timer1.Enabled = true;
+                MainView.initSnake();
             }
             else
             {
                 NewGame.Text = "New Game";
                 timer1.Enabled = false;
+                MainView.destroySnake();
             }
             MainView.GameOn = !MainView.GameOn;
         }
