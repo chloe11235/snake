@@ -9,7 +9,7 @@ namespace SaveList
 {
     /*
      * Si serpent touche un mur ou une partie de son corps
-     *  On ouvre le fichier XML et on écrit
+     *  On ouvre le fichier XML et on écrit (création auto si n'existe pas)
     */
 
     //Reprise du TP student pour la partie XML
@@ -57,11 +57,10 @@ namespace SaveList
 
     /*
     <?xml version="1.0" encoding="utf-8"?>
-    <Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-        <MonNomAMoiQueJai>Cad</MonNomAMoiQueJai>
-        <MonPrenomAMoiQueJai>Dsart</MonPrenomAMoiQueJai>
-        <Note>dss</Note>
-    </Student>
+    <Save xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <MonPseudo>Cad</MonPseudo>
+        <MonScore>dss</MonScore>
+    </Save>
     */
     // To be serailized, an object (potentially memeber of a collection) must have properties
    

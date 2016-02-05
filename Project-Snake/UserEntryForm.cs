@@ -21,9 +21,11 @@ namespace DemoUserControl
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            TheValue = this.ucPseudo.Text + " " + this.ucScore.Text;
+//          this.UcScore.Text = le score passé en paramètres
+            this.UcScore.Text = "42"; //En attendant le score passé en paramètre
+            TheValue = this.ucPseudo.Text + " " + this.UcScore.Text;
 
-            /* Création d'un containeur
+            /* Création d'un containeur en passant le pseudo et le score
              * StudentContainer container = new StudentContainer();
              */
         }
