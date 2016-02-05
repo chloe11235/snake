@@ -28,62 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.NewGame = new System.Windows.Forms.Button();
             this.Score = new System.Windows.Forms.Button();
-
-            GameView MainView = new GameView();
-
-            this.panel1 = new System.Windows.Forms.Panel();
-
-
+            this.MainView = new Project_Snake.GameView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // NewGame
             // 
-            this.NewGame.Location = new System.Drawing.Point(20, 20);
-            this.NewGame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.NewGame.Location = new System.Drawing.Point(13, 13);
             this.NewGame.Name = "NewGame";
-            this.NewGame.Size = new System.Drawing.Size(112, 35);
+            this.NewGame.Size = new System.Drawing.Size(75, 23);
             this.NewGame.TabIndex = 0;
             this.NewGame.Text = "New Game";
             this.NewGame.UseVisualStyleBackColor = true;
+            this.NewGame.Click += new System.EventHandler(this.OnclickNewGame);
             // 
             // Score
             // 
-            this.Score.Location = new System.Drawing.Point(214, 18);
-            this.Score.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Score.Location = new System.Drawing.Point(143, 12);
             this.Score.Name = "Score";
-            this.Score.Size = new System.Drawing.Size(112, 35);
+            this.Score.Size = new System.Drawing.Size(75, 23);
             this.Score.TabIndex = 1;
             this.Score.Text = "Score";
             this.Score.UseVisualStyleBackColor = true;
             // 
-
-         
-
-    // panel1
+            // MainView
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(14, 62);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(295, 178);
-            this.panel1.TabIndex = 2;
-
+            this.MainView.BackColor = System.Drawing.Color.Black;
+            this.MainView.Location = new System.Drawing.Point(13, 60);
+            this.MainView.Name = "MainView";
+            this.MainView.Size = new System.Drawing.Size(300, 100);
+            this.MainView.TabIndex = 3;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.ClientSize = new System.Drawing.Size(502, 402);
-           
-            this.ClientSize = new System.Drawing.Size(335, 261);
-            this.Controls.Add(this.panel1);
-
+            this.ClientSize = new System.Drawing.Size(500, 500);
             this.Controls.Add(this.Score);
             this.Controls.Add(this.NewGame);
-            this.Controls.Add(MainView);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Controls.Add(this.MainView);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -94,7 +84,9 @@
 
         private System.Windows.Forms.Button NewGame;
         private System.Windows.Forms.Button Score;
-        private System.Windows.Forms.Panel panel1;
+        
+        private GameView MainView;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

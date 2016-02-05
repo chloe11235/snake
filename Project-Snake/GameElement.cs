@@ -14,17 +14,16 @@ namespace Project_Snake
 
         private ElementName Nom;
 
-        private int posX;
+        int posX;
 
-        public int Horizontal
+        public int PosX
         {
             get { return posX; }
             set { posX = value; }
         }
+        int posY;
 
-        private int posY;
-
-        public int Vertical
+        public int PosY
         {
             get { return posY; }
             set { posY = value; }
@@ -38,11 +37,16 @@ namespace Project_Snake
 
         public GameElement (ElementName type, int x, int y)
         {
-            Nom = type; 
-            posX = x;
-            posY = y;
+           this.Nom = type; 
+            this.Location= new System.Drawing.Point(x, y);
+            this.PosX = x;
+           this.PosY = y;
             this.Height = 10;
             this.Width = 10;
+            if (type == ElementName.SNAKEBODY) { this.Image = global::Project_Snake.Properties.Resources.snake_corps; }
+            else if (type == ElementName.SNAKEHEAD) { this.Image = global::Project_Snake.Properties.Resources.snake_tete; }
+            else if (type == ElementName.WALL) { this.Image = global::Project_Snake.Properties.Resources.mur; }
+            this.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
         }
        
         

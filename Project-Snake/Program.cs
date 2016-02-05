@@ -22,6 +22,7 @@ namespace Project_Snake
            panel.Visible = true;
            panel.Show();
             //Application.Run(new GameView());
+           
         }
     }
 }

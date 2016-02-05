@@ -15,6 +15,7 @@ namespace Project_Snake
     public partial class Form1 : Form
     {
         GameElement exemple = new GameElement();
+        private bool GameOn= false;
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace Project_Snake
 
         
         
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void panel(object sender, PaintEventArgs e)
         {
                     }
 
@@ -38,27 +39,50 @@ namespace Project_Snake
 switch (keyData)
  {
  case Keys.Right:
-        MessageBox.Show("droite","droite",MessageBoxButtons.OK);
+        //MessageBox.Show("droite","droite",MessageBoxButtons.OK);
+         MainView.moveSnake();
         return true;
-        break;
+        
  case Keys.Left:
-        MessageBox.Show("gauche","gauche",MessageBoxButtons.OK);
+      //  MessageBox.Show("gauche","gauche",MessageBoxButtons.OK);
+        MainView.addMur();
         return true;
-        break;
+        
  case Keys.Up:
         MessageBox.Show("haut","haut",MessageBoxButtons.OK);
         return true;
-        break;
+        
  case Keys.Down:
         MessageBox.Show("bas","bas",MessageBoxButtons.OK);
         return true;
-        break;
+        
  
  
  default:
  return base.ProcessCmdKey(ref msg, keyData);
  }
 }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            MainView.moveSnake();
+
+        }
+
+        private void OnclickNewGame(object sender, EventArgs e)
+        {
+            if (!GameOn)
+            {
+                NewGame.Text = "Stop";
+                timer1.Enabled = true;
+            }
+            else
+            {
+                NewGame.Text = "New Game";
+                timer1.Enabled = false;
+            }
+            GameOn = !GameOn;
+        }
 
 
     }
