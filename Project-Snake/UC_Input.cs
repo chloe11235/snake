@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//Je ne sais pas à quoi sers ce code
+//Je ne sais pas à quoi sers ce code mais on en a besoin pour le "user entry form designer" (line 32 et 99)
 namespace DemoUserControl
 {
     public partial class UC_Input : UserControl

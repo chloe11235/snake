@@ -19,7 +19,9 @@ namespace SaveList
             m_saveList = new List<Save>();
         }
 
-        /*
+        /* ça me dit qu'il y a une erreur car pas de prototype avec trois paramètres en entrée,
+         * mais dans le code de la prof ça mettait pas d'erreur
+         * 
         public void Add(string Pseudo, uint score)
         {
             uint cpt = (uint)m_saveList.Count;
@@ -40,7 +42,7 @@ namespace SaveList
         public bool Save()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Save>));
-            using (StreamWriter wr = new StreamWriter("save.xml"))
+            using (StreamWriter wr = new StreamWriter("Save.xml"))
             {
                 xmlSerializer.Serialize(wr, m_saveList);
             }
@@ -66,7 +68,7 @@ namespace SaveList
         public bool Load()
         {
             XmlSerializer xmlDeserializer = new XmlSerializer(typeof(List<Save>));
-            using (StreamReader rd = new StreamReader("students.xml"))
+            using (StreamReader rd = new StreamReader("Save.xml"))
             {
                 m_saveList = xmlDeserializer.Deserialize(rd) as List<Save>;
             }
