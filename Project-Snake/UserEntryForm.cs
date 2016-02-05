@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SaveList;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,9 +26,9 @@ namespace DemoUserControl
             this.UcScore.Text = "42"; //En attendant le score passé en paramètre
             TheValue = this.ucPseudo.Text + " " + this.UcScore.Text;
 
-            /* Création d'un containeur en passant le pseudo et le score
-             * StudentContainer container = new StudentContainer();
-             */
+            // Création d'un containeur en passant le pseudo et le score
+              SaveContainer container = new SaveContainer();
+            
         }
     }
 }

@@ -20,7 +20,7 @@ namespace SaveList
         }
 
         /* ça me dit qu'il y a une erreur car pas de prototype avec trois paramètres en entrée,
-         * mais dans le code de la prof ça mettait pas d'erreur
+         * mais dans le code de la prof ça mettait pas d'erreur (prototype avec 4 paramètres mais appel avec 5)
          * 
         public void Add(string Pseudo, uint score)
         {

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Code nécessaire au user entry form
 namespace DemoUserControl
 {
     class CustomTextBox : TextBox
