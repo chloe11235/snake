@@ -17,11 +17,8 @@ namespace Project_Snake
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-           GameView panel = new GameView();
-           panel.Enabled = true;
-           panel.Visible = true;
-           panel.Show();
-            //Application.Run(new GameView());
+          
+           
            
         }
     }
