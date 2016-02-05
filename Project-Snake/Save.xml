@@ -1,7 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <main>
-  <object type="save">
+  <joueur>
     <nom>Toto</nom>
-    <detail>score="42"</detail>
-  </object>
+    <score>42</score>
+  </joueur>
+<joueur>
+    <nom>Titi</nom>
+    <score>66</score>
+  </joueur>
 </main>
