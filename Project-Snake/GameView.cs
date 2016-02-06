@@ -12,6 +12,7 @@ namespace Project_Snake
 
     {
         List<GameElement> MyMur = new List<GameElement>();
+        List<GameElement> MyFruit = new List<GameElement>();
         GameElement brique = new GameElement(GameElement.ElementName.WALL, 0, 0);
         GameElement Exemple = new GameElement();
         public enum snakeDir : int {DROITE, GAUCHE, HAUT, BAS};
@@ -140,11 +141,50 @@ namespace Project_Snake
        
 
         
-        public void addMur(){
-          
-            MyMur.Add(brique);
-            this.Controls.Add(brique);
+        public void addStuff(bool Fruit) // si 1 ajoute un fruit si 0 ajoute un mur
+        {
+            int x = 0, y = 0;
+            bool superposition=true;
+            while(superposition)
+            {
+                Random rnd = new Random();
+                x = rnd.Next(0, 30 * Exemple.Width);
+                y = rnd.Next(0, 10 * Exemple.Height);
+                x = x - (x % 10);
+                y = y - (y % 10);
+
+            foreach(GameElement part in MySnake)
+            {
+                if ((part.PosX != x) && (part.PosY != y)) superposition = false;
+                else superposition = true;
+            }
             
+            foreach(GameElement part in MyMur)
+            {
+                if ((part.PosX != x) && (part.PosY != y)) superposition = false;
+                else superposition = true;
+            }
+
+            foreach(GameElement part in MyFruit)
+            {
+                if ((part.PosX != x) && (part.PosY != y)) superposition = false;
+                else superposition = true;
+            }
+
+            }
+
+            if (!Fruit)
+            {
+                GameElement newBrique = new GameElement(GameElement.ElementName.WALL, x, y);
+                MyMur.Add(newBrique);
+                this.Controls.Add(newBrique);
+            }
+            else
+            {
+                GameElement newFruit = new GameElement(GameElement.ElementName.FRUIT, x, y);
+                MyFruit.Add(newFruit);
+                this.Controls.Add(newFruit);
+            }
         }
 
 
