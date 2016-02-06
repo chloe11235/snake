@@ -32,3 +32,20 @@ namespace DemoUserControl
         }
     }
 }
+
+namespace SaveList
+{
+    static class Program
+    {
+
+        static void ReadSaveInstances(SaveContainer container)
+        {
+            container.Load();
+        }
+
+        static void CreateSaveInstances(SaveContainer container)
+        {
+            container.Add(m_Pseudo, m_score);
+        }
+    }
+}

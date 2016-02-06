@@ -26,9 +26,11 @@ namespace SaveList
             set { m_pseudo = value; }
         }
 
-        private int m_score;
+        private uint m_score;
+        private string Pseudo1;
+        private uint score;
         [XmlElement("MonScore")]
-        public int Score
+        public uint Score
         {
             get { return m_score; }
             set { m_score = value; }
@@ -45,11 +47,13 @@ namespace SaveList
         }
 
         //Constructeur par paramètres
-        public Save(string pseudo, int score)
+        public Save(string pseudo, uint score)
         {
             this.m_pseudo = pseudo;
-            this.Score = score;
+            this.m_score = score;
         }
+
+
 
         #endregion Constructeur Declaration
 
@@ -70,6 +74,7 @@ namespace SaveList
 /*Pour créer un container avec les données rentrées 
  *  appeler quand on appuie sur OK après avoir renseigné pseudo et score
 */
+
 /*
 static void CreateSaveInstances(SaveContainer container)
 {
@@ -80,6 +85,9 @@ static void CreateSaveInstances(SaveContainer container)
 //Issu du lab de la prof sur l'XML (c'était dans le main)
 /*
  *  Pour afficher un containeur (à appeler quand on clique sur score)
+ */
+
+/*
 static void ReadSaveInstances(SaveContainer container)
 {
     container.Load();
