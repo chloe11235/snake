@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,7 +66,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Score.cs" />
+    <Compile Include="ScoreContainer.cs" />
     <Compile Include="Snake.cs" />
+    <Compile Include="UC_Input.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Input.Designer.cs">
+      <DependentUpon>UC_Input.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserEntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserEntryForm.Designer.cs">
+      <DependentUpon>UserEntryForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,6 +88,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserEntryForm.resx">
+      <DependentUpon>UserEntryForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -90,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\mur.bmp" />
+    <Content Include="Save.xml" />
     <None Include="Resources\snake_haut.bmp" />
     <None Include="Resources\snake_gauche.bmp" />
     <None Include="Resources\snake_bas.bmp" />
