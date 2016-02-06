@@ -46,6 +46,7 @@ namespace Project_Snake
             if (type == ElementName.SNAKEBODY) { this.Image = global::Project_Snake.Properties.Resources.snake_corps; }
             else if (type == ElementName.SNAKEHEAD) { this.Image = global::Project_Snake.Properties.Resources.snake_tete; }
             else if (type == ElementName.WALL) { this.Image = global::Project_Snake.Properties.Resources.mur; }
+            else if (type == ElementName.FRUIT) { this.Image = global::Project_Snake.Properties.Resources.fruit; }
             this.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
         }
        
