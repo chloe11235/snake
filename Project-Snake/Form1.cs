@@ -41,7 +41,7 @@ switch (keyData)
         
  case Keys.Right:
         //MessageBox.Show("droite","droite",MessageBoxButtons.OK);
-         MainView.moveSnake(0);
+        MainView.moveSnake(0);
         return true;
         
  case Keys.Left:
