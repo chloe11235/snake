@@ -138,5 +138,14 @@ namespace Project_Snake.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+
+        internal static System.Drawing.Bitmap fruit
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("fruit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
