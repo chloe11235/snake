@@ -43,9 +43,9 @@ namespace SaveList
             container.Load();
         }
 
-        static void CreateSaveInstances(SaveContainer container)
+       /* static void CreateSaveInstances(SaveContainer container)
         {
             container.Add(m_Pseudo, m_score);
-        }
+        }*/
     }
 }

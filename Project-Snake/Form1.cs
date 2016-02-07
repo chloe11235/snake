@@ -40,22 +40,26 @@ switch (keyData)
  {
         
  case Keys.Right:
-        //MessageBox.Show("droite","droite",MessageBoxButtons.OK);
+       
         MainView.moveSnake(0);
+        MainView.collisionAll();
         return true;
         
  case Keys.Left:
       //  MessageBox.Show("gauche","gauche",MessageBoxButtons.OK);
         MainView.moveSnake(1);
+        MainView.collisionAll();
         return true;
         
  case Keys.Up:
         MainView.moveSnake(2);
+        MainView.collisionAll();
         return true;
         
  case Keys.Down:
        // MessageBox.Show("bas","bas",MessageBoxButtons.OK);
         MainView.moveSnake(3);
+        MainView.collisionAll();
         return true;
         
  
@@ -67,7 +71,11 @@ switch (keyData)
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (!MainView.GameStop) { 
             MainView.moveSnake(4);
+            MainView.collisionAll();
+            }
+            else{}
 
         }
 
@@ -78,14 +86,16 @@ switch (keyData)
                 NewGame.Text = "Stop";
                 timer1.Enabled = true;
                 MainView.initSnake();
+                MainView.GameOn = true;
             }
             else
             {
                 NewGame.Text = "New Game";
                 timer1.Enabled = false;
                 MainView.destroySnake();
+                MainView.GameOn = false;
             }
-            MainView.GameOn = !MainView.GameOn;
+           
         }
 
 

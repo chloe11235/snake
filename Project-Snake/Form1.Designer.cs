@@ -47,7 +47,7 @@
             // 
             // Score
             // 
-            this.Score.Location = new System.Drawing.Point(143, 12);
+            this.Score.Location = new System.Drawing.Point(154, 12);
             this.Score.Name = "Score";
             this.Score.Size = new System.Drawing.Size(75, 23);
             this.Score.TabIndex = 1;
@@ -57,15 +57,18 @@
             // MainView
             // 
             this.MainView.BackColor = System.Drawing.Color.Black;
+            this.MainView.GameOn = false;
+            this.MainView.GameStop = false;
             this.MainView.Location = new System.Drawing.Point(13, 60);
             this.MainView.Name = "MainView";
+            this.MainView.Score = 0;
             this.MainView.Size = new System.Drawing.Size(300, 100);
             this.MainView.TabIndex = 3;
             // 
             // timer1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 

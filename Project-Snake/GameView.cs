@@ -18,6 +18,20 @@ namespace Project_Snake
         public enum snakeDir : int {DROITE, GAUCHE, HAUT, BAS};
         private snakeDir dir ;
         private bool gameOn = false;
+        private bool gameStop = false;
+        private int score;
+
+        public int Score
+        {
+            get { return score; }
+            set { score = value; }
+        }
+
+        public bool GameStop
+        {
+            get { return gameStop; }
+            set { gameStop = value; }
+        }
 
         public bool GameOn
         {
@@ -45,12 +59,16 @@ namespace Project_Snake
         {
            dir = snakeDir.DROITE;
             GameElement head = new GameElement(GameElement.ElementName.SNAKEHEAD, 50, 10);
-            GameElement corps = new GameElement(GameElement.ElementName.SNAKEBODY, 40, 10);
+            //GameElement corps = new GameElement(GameElement.ElementName.SNAKEBODY, 40, 10);
             MySnake.Add(head);
-            MySnake.Add(corps);
+            //MySnake.Add(corps);
             this.Controls.Add(head);
-            this.Controls.Add(corps);
-            addSnake(3);
+           // this.Controls.Add(corps);
+            addSnake(4);
+            addStuff(true);
+            addStuff(false);
+            gameStop = false;
+            score = 0;
         }
 
         public void destroySnake()
@@ -60,6 +78,16 @@ namespace Project_Snake
                 this.Controls.Remove(part);
             }
             MySnake.Clear();
+            foreach (GameElement part in MyFruit)
+            {
+                this.Controls.Remove(part);
+            }
+            MyFruit.Clear();
+            foreach (GameElement part in MyMur)
+            {
+                this.Controls.Remove(part);
+            }
+            MyMur.Clear();
         }
 
         public void addSnake(int x) //x: nb de morceau
@@ -67,7 +95,7 @@ namespace Project_Snake
             int i;
             for (i = 0; i < x; i++)
             {
-                GameElement corps = new GameElement(GameElement.ElementName.SNAKEBODY, MySnake.ElementAt(MySnake.Count-1).PosX - i * 10, MySnake.ElementAt(MySnake.Count-1).PosY);
+                GameElement corps = new GameElement(GameElement.ElementName.SNAKEBODY, MySnake.ElementAt(MySnake.Count-1).PosX -  10, MySnake.ElementAt(MySnake.Count-1).PosY);
                 MySnake.Add(corps);
                 this.Controls.Add(corps);
             }
@@ -187,9 +215,78 @@ namespace Project_Snake
             }
         }
 
+        public void collisionAll()
+        {
+            GameElement obstacle = new GameElement();
+            obstacle = testCollision();
+            if (obstacle != null) collision(obstacle);
+            else { }
+        }
 
-         
-        
+        public GameElement testCollision()
+        {
+            
+            bool superposition = true;
+            int x = MySnake.ElementAt(0).PosX;
+            int y = MySnake.ElementAt(0).PosY;
+            int i;
+            GameElement obstacle = new GameElement();
+
+
+            for (i = 1; i < MySnake.Count; i++)
+            {
+                if ((MySnake.ElementAt(i).PosX == x) && (MySnake.ElementAt(i).PosY == y)) { superposition = true; obstacle = MySnake.ElementAt(i); }
+                else { }
+            }
+                foreach (GameElement part in MyMur)
+                {
+                    if ((part.PosX == x) && (part.PosY == y)) {superposition = true; obstacle = part; }
+                    else { }
+                }
+
+                foreach (GameElement part in MyFruit)
+                {
+                    if ((part.PosX == x) && (part.PosY == y)){ superposition = true; obstacle = part; }
+                    else {}
+                }
+
+                if (superposition) return obstacle;
+                else return null;
+                
+
+            
+            
+
+        }
+
+        public void collision( GameElement type)
+        {
+            if (type.Nom1 == GameElement.ElementName.FRUIT)
+            {
+                addSnake(1);
+                this.Controls.Remove(type);
+                MyFruit.Remove(type);
+                addStuff(true);
+                addStuff(false);
+                countScore();
+
+            }
+
+            if (type.Nom1 == GameElement.ElementName.WALL || type.Nom1 == GameElement.ElementName.SNAKEBODY) 
+            {
+              
+                gameStop = true;
+                MessageBox.Show("Score= "+score, "colision mur", MessageBoxButtons.OK);
+            }
+
+            
+
+        }
+
+        public void countScore()
+        {
+            score = score + 2 * MySnake.Count;
+        }
     }
 
  

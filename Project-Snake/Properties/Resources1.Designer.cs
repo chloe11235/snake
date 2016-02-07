@@ -82,6 +82,16 @@ namespace Project_Snake.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fruit {
+            get {
+                object obj = ResourceManager.GetObject("fruit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mur {
             get {
                 object obj = ResourceManager.GetObject("mur", resourceCulture);
@@ -135,15 +145,6 @@ namespace Project_Snake.Properties {
         internal static System.Drawing.Bitmap snake_tete {
             get {
                 object obj = ResourceManager.GetObject("snake_tete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
-        internal static System.Drawing.Bitmap fruit
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("fruit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

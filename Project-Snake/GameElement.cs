@@ -14,6 +14,12 @@ namespace Project_Snake
 
         private ElementName Nom;
 
+        internal ElementName Nom1
+        {
+            get { return Nom; }
+            set { Nom = value; }
+        }
+
         int posX;
 
         public int PosX
