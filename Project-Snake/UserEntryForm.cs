@@ -37,7 +37,7 @@ namespace SaveList  //Copie du "Program.cs" de l'exemple de l'XML trouvé sur ca
 {
     static class Program
     {
-        //Issu du lab de la prof sur l'XML (c'était dans le main)
+        //Issu  XML Serialization sur Campus (lab chap 1)
         /*Pour créer un container avec les données rentrées 
          *  appeler quand on appuie sur OK après avoir renseigné pseudo et score
         */
@@ -46,19 +46,20 @@ namespace SaveList  //Copie du "Program.cs" de l'exemple de l'XML trouvé sur ca
             container.Load();
         }
 
-        //Issu du lab de la prof sur l'XML (c'était dans le main)
+        //Issu  XML Serialization sur Campus (lab chap 1)
         /*
          *  Pour afficher un containeur (à appeler quand on clique sur score)
          */
         static void CreateSaveInstances(SaveContainer container)
         {
-            container.Add(ucPseudo, Ucscore);
+            //container.Add(ucPseudo, Ucscore);
+            container.Add("Awac", 42);
         }
     }
 }
 
 //Issu de Demo ECE SE
-//Lors de l'évènement qui doit appeler la sauvegarde, mettre ceci
+//Lors de l'évènement qui doit appeler la sauvegarde (à priori une collision), mettre ceci (ça appelle la fenêtre demandant de remplir le pseudo)
 //La prof l'avais mis dans son main form lors de l'appui sur le bouton add
 /*
 UserEntryForm uef = new UserEntryForm();
@@ -74,3 +75,11 @@ UserEntryForm uef = new UserEntryForm();
                 //Rien
             }
 */
+
+//Issu de XML Serialization sur Campus (lab chap 1)
+//Dans le main elle appelle ces deux fonctions pour afficher le fichier xml
+/*
+{
+    Program.ReadSaveInstances(container);
+    container.DisplayAll();
+}*/

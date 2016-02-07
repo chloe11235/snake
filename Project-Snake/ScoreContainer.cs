@@ -18,10 +18,6 @@ namespace SaveList
         {
             m_saveList = new List<Save>();
         }
-
-        /* 
-         * Erreur de surcharge ?
-         */
  
         public void Add(string Pseudo, uint score)
         {
