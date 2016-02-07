@@ -33,19 +33,44 @@ namespace DemoUserControl
     }
 }
 
-namespace SaveList
+namespace SaveList  //Copie du "Program.cs" de l'exemple de l'XML trouvé sur campus
 {
     static class Program
     {
-
+        //Issu du lab de la prof sur l'XML (c'était dans le main)
+        /*Pour créer un container avec les données rentrées 
+         *  appeler quand on appuie sur OK après avoir renseigné pseudo et score
+        */
         static void ReadSaveInstances(SaveContainer container)
         {
             container.Load();
         }
 
+        //Issu du lab de la prof sur l'XML (c'était dans le main)
+        /*
+         *  Pour afficher un containeur (à appeler quand on clique sur score)
+         */
         static void CreateSaveInstances(SaveContainer container)
         {
-            container.Add(m_Pseudo, m_score);
+            container.Add(ucPseudo, Ucscore);
         }
     }
 }
+
+//Issu de Demo ECE SE
+//Lors de l'évènement qui doit appeler la sauvegarde, mettre ceci
+//La prof l'avais mis dans son main form lors de l'appui sur le bouton add
+/*
+UserEntryForm uef = new UserEntryForm();
+
+            DialogResult dr = uef.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                MessageBox.Show("Value = " + uef.TheValue);
+                 //Appel de la création du fichier xml
+            }
+            else
+            {
+                //Rien
+            }
+*/

@@ -70,25 +70,3 @@ namespace SaveList
    
 }
 
-//Issu du lab de la prof sur l'XML (c'était dans le main)
-/*Pour créer un container avec les données rentrées 
- *  appeler quand on appuie sur OK après avoir renseigné pseudo et score
-*/
-
-/*
-static void CreateSaveInstances(SaveContainer container)
-{
-    container.Add(ucPseudo,ucScore);
-}
-*/
-
-//Issu du lab de la prof sur l'XML (c'était dans le main)
-/*
- *  Pour afficher un containeur (à appeler quand on clique sur score)
- */
-
-/*
-static void ReadSaveInstances(SaveContainer container)
-{
-    container.Load();
-}*/
