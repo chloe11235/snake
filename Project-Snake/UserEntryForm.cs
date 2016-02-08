@@ -43,7 +43,7 @@ namespace DemoUserControl
             //UcScore.Text = "" + Project_Snake.GameView.Score;
             // Création d'un containeur en passant le pseudo et le score
             container.Add(ucPseudo, Project_Snake.GameView.Score);
-            container.SaveScore();
+            //container.SaveScore();
 
             //Mettre appel de la fonction d'enregistrement de l'XML
         }
