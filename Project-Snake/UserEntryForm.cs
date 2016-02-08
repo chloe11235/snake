@@ -35,7 +35,7 @@ namespace DemoUserControl
 
             // Création d'un containeur en passant le pseudo et le score
             container.Add(ucPseudo, Project_Snake.GameView.Score);
-            container.SaveScore();
+            //container.SaveScore();
         }
     }
 }
