@@ -18,8 +18,8 @@ namespace SaveList
         {
             m_saveList = new List<Save>();
         }
- 
-        public void Add(string Pseudo, uint score)
+
+        public void Add(DemoUserControl.UC_Input Pseudo, int score)
         {
             m_saveList.Add(new Save(Pseudo, score));
         }
@@ -70,6 +70,23 @@ namespace SaveList
             }
 
             return true;
+        }
+
+        //Copie du "Program.cs" de l'exemple de l'XML trouvé sur campus
+        /*public void CreateSaveInstances(SaveList.SaveContainer container)
+        {
+            container.Add(ucPseudo, Ucscore);
+            //container.Add("Awac", 42);
+        }*/
+
+        //Copie du "Program.cs" de l'exemple de l'XML trouvé sur campus
+        //Issu de XML Serialization sur Campus (lab chap 1)
+        /*
+         *  Pour afficher un containeur (à appeler quand on clique sur score)
+         */
+        public void ReadSaveInstances(SaveList.SaveContainer container)
+        {
+            container.Load();
         }
     }
 }

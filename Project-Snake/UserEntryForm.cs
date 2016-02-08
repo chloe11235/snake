@@ -14,6 +14,20 @@ namespace DemoUserControl
     public partial class UserEntryForm : Form
     {
         public String TheValue { get; private set; }
+       
+        private SaveContainer container = new SaveContainer();
+
+        internal SaveContainer Container1
+        {
+            get { return container; }
+            set { container = value; }
+        }
+
+
+
+       // List<SaveContainer> container = new list<SaveContainer>();
+            
+        
 
         public UserEntryForm()
         {
@@ -23,37 +37,12 @@ namespace DemoUserControl
         private void btnOK_Click(object sender, EventArgs e)
         {
 //          this.UcScore.Text = le score passé en paramètres
-            this.UcScore.Text = "42"; //En attendant le score passé en paramètre
-            TheValue = this.ucPseudo.Text + " " + this.UcScore.Text;
+            //this.UcScore = Project_Snake.GameView.Score; //En attendant le score passé en paramètre
+            TheValue = "Pseudo  = " + this.ucPseudo.Text + " Score : " + Project_Snake.GameView.Score;
 
+            //UcScore.Text = "" + Project_Snake.GameView.Score;
             // Création d'un containeur en passant le pseudo et le score
-              SaveContainer container = new SaveContainer();
-            
-        }
-    }
-}
-
-namespace SaveList  //Copie du "Program.cs" de l'exemple de l'XML trouvé sur campus
-{
-    static class Program
-    {
-        //Issu  XML Serialization sur Campus (lab chap 1)
-        /*Pour créer un container avec les données rentrées 
-         *  appeler quand on appuie sur OK après avoir renseigné pseudo et score
-        */
-        static void ReadSaveInstances(SaveContainer container)
-        {
-            container.Load();
-        }
-        
-        //Issu  XML Serialization sur Campus (lab chap 1)
-        /*
-         *  Pour afficher un containeur (à appeler quand on clique sur score)
-         */
-        static void CreateSaveInstances(SaveContainer container)
-        {
-            //container.Add(ucPseudo, Ucscore);
-            container.Add("Awac", 42);
+            container.Add(ucPseudo, Project_Snake.GameView.Score);
         }
     }
 }
@@ -62,7 +51,7 @@ namespace SaveList  //Copie du "Program.cs" de l'exemple de l'XML trouvé sur ca
 //Lors de l'évènement qui doit appeler la sauvegarde (à priori une collision), mettre ceci (ça appelle la fenêtre demandant de remplir le pseudo)
 //La prof l'avais mis dans son main form lors de l'appui sur le bouton add
 /*
-private void OnclickScore(object sender, EventArgs e)
+
 {
     //dans l'exemple DEMO ECE SE c'était "namespace DemoUserEntryForm"
     UserEntryForm uef = new UserEntryForm();
@@ -82,6 +71,7 @@ private void OnclickScore(object sender, EventArgs e)
 //Issu de XML Serialization sur Campus (lab chap 1)
 //Dans le main elle appelle ces deux fonctions pour afficher le fichier xml
 /*
+private void OnclickScore(object sender, EventArgs e)
 {
     Program.ReadSaveInstances(container);
     container.DisplayAll();

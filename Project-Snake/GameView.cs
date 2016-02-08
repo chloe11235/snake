@@ -19,11 +19,13 @@ namespace Project_Snake
         private snakeDir dir ;
         private bool gameOn = false;
         private bool gameStop = false;
-        private int score;
+       static  private int score;
 
-        public int Score
+         
+
+        static public int Score
         {
-            get { return score; }
+            get {  return score; }
             set { score = value; }
         }
 
@@ -276,7 +278,20 @@ namespace Project_Snake
             {
               
                 gameStop = true;
-                MessageBox.Show("Score= "+score, "colision mur", MessageBoxButtons.OK);
+
+                //MessageBox.Show("Score= "+score, "colision mur", MessageBoxButtons.OK);
+                //DemoUserControl.UserEntryForm.UcScore = "" + Project_Snake.GameView.Score;
+                DemoUserControl.UserEntryForm uef = new DemoUserControl.UserEntryForm();
+                DialogResult dr = uef.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    MessageBox.Show(uef.TheValue);
+                    //Appel de la création du fichier xml
+                }
+                else
+                {
+                    //Rien
+                }
             }
 
             

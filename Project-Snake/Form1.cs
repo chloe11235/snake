@@ -7,8 +7,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-
 
 namespace Project_Snake
 {
@@ -33,6 +31,9 @@ namespace Project_Snake
         {
 
         }
+
+        
+        
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
 {
@@ -68,6 +69,7 @@ switch (keyData)
  return base.ProcessCmdKey(ref msg, keyData);
         }
 }
+        
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -98,7 +100,11 @@ switch (keyData)
            
         }
 
-
+        //Issu du TP XML sur campus
+        private void OnclickScore(object sender, EventArgs e)
+        {
+            UserControl.Container1.Load();
+            UserControl.Container1.DisplayAll();
+        }
     }
 }
-
