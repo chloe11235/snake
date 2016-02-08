@@ -11,6 +11,7 @@ namespace Project_Snake
     class GameView: Panel
 
     {
+        
         List<GameElement> MyMur = new List<GameElement>();
         List<GameElement> MyFruit = new List<GameElement>();
         GameElement brique = new GameElement(GameElement.ElementName.WALL, 0, 0);
@@ -20,6 +21,9 @@ namespace Project_Snake
         private bool gameOn = false;
         private bool gameStop = false;
         private int score;
+        System.Xml.Schema.XmlSchemaSet schemas = new System.Xml.Schema.XmlSchemaSet();
+      
+
 
         public int Score
         {
@@ -213,32 +217,41 @@ namespace Project_Snake
         public void addStuff(bool Fruit) // si 1 ajoute un fruit si 0 ajoute un mur
         {
             int x = 0, y = 0;
-            bool superposition=true;
+            bool superpositionS=false;
+            bool superpositionW = false;
+            bool superpositionF = false;
+            bool superposition = true;
             while(superposition)
             {
+                superpositionS = false;
+                superpositionW = false;
+                superpositionF = false;
                 Random rnd = new Random();
                 x = rnd.Next(0, 30 * Exemple.Width);
                 y = rnd.Next(0, 10 * Exemple.Height);
                 x = x - (x % 10);
                 y = y - (y % 10);
+                
 
             foreach(GameElement part in MySnake)
             {
-                if ((part.PosX != x) && (part.PosY != y)) superposition = false;
-                else superposition = true;
+                if ((part.PosX == x) && (part.PosY == y)) superpositionS = true;
+                else { }
             }
             
             foreach(GameElement part in MyMur)
             {
-                if ((part.PosX != x) && (part.PosY != y)) superposition = false;
-                else superposition = true;
+                if ((part.PosX == x) && (part.PosY == y)) superpositionW = true;
+                else { }
             }
 
             foreach(GameElement part in MyFruit)
             {
-                if ((part.PosX != x) && (part.PosY != y)) superposition = false;
-                else superposition = true;
+                if ((part.PosX == x) && (part.PosY == y)) superpositionF = true;
+                else { }
             }
+            if (superpositionF || superpositionS || superpositionW) superposition = true;
+            else superposition = false;
 
             }
 
@@ -328,6 +341,9 @@ namespace Project_Snake
         {
             score = score + 2 * MySnake.Count;
         }
+    
+        
+    
     }
 
  

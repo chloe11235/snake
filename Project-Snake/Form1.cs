@@ -41,29 +41,29 @@ switch (keyData)
         
  case Keys.Right:
          
-         MainView.moveSnake(0);
-         MainView.collisionAll();
         
+         MainView.collisionAll();
+         MainView.moveSnake(0);
         return true;
         
  case Keys.Left:
       //  MessageBox.Show("gauche","gauche",MessageBoxButtons.OK);
-        MainView.moveSnake(1);
+       
         MainView.collisionAll();
-        
+        MainView.moveSnake(1);
         return true;
         
  case Keys.Up:
-        MainView.moveSnake(2);
+       
         MainView.collisionAll();
-        
+        MainView.moveSnake(2);
         return true;
         
  case Keys.Down:
        // MessageBox.Show("bas","bas",MessageBoxButtons.OK);
-        MainView.moveSnake(3);
-        MainView.collisionAll();
         
+        MainView.collisionAll();
+        MainView.moveSnake(3);
         return true;
         
  
