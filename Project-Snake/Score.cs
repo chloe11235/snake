@@ -18,19 +18,19 @@ namespace SaveList
     {
         #region Members Declaration
 
-        private string m_pseudo;
+        private DemoUserControl.UC_Input m_pseudo;
         [XmlElement("MonPseudo")]
-        public string Pseudo
+        public DemoUserControl.UC_Input Pseudo
         {
             get { return m_pseudo; }
             set { m_pseudo = value; }
         }
 
-        private uint m_score;
-        private string Pseudo1;
-        private uint score;
+        private int m_score;
+        private DemoUserControl.UC_Input Pseudo1;
+        private int score;
         [XmlElement("MonScore")]
-        public uint Score
+        public int Score
         {
             get { return m_score; }
             set { m_score = value; }
@@ -42,12 +42,12 @@ namespace SaveList
         //Constructeur
         public Save()
         {
-            this.m_pseudo = "";
+            this.m_pseudo.Text = "";
             this.m_score = 0;
         }
 
         //Constructeur par paramètres
-        public Save(string pseudo, uint score)
+        public Save(DemoUserControl.UC_Input pseudo, int score)
         {
             this.m_pseudo = pseudo;
             this.m_score = score;

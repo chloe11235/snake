@@ -30,7 +30,6 @@
         {
             this.btnOK = new System.Windows.Forms.Button();
             this.ucPseudo = new DemoUserControl.UC_Input();
-            this.UcScore = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOK
@@ -57,29 +56,16 @@
             this.ucPseudo.Size = new System.Drawing.Size(213, 40);
             this.ucPseudo.TabIndex = 3;
             // 
-            // UcScore
-            // 
-            this.UcScore.AccessibleName = "Score";
-            this.UcScore.AutoSize = true;
-            this.UcScore.Location = new System.Drawing.Point(152, 105);
-            this.UcScore.Name = "UcScore";
-            this.UcScore.Size = new System.Drawing.Size(35, 13);
-            this.UcScore.TabIndex = 5;
-            this.UcScore.Tag = "";
-            this.UcScore.Text = "label2";
-            // 
             // UserEntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.UcScore);
             this.Controls.Add(this.ucPseudo);
             this.Controls.Add(this.btnOK);
             this.Name = "UserEntryForm";
             this.Text = "Demo User Control";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -87,7 +73,6 @@
 
         private System.Windows.Forms.Button btnOK;
         private UC_Input ucPseudo;
-        private System.Windows.Forms.Label UcScore;
     }
 }
 
