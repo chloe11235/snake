@@ -45,8 +45,7 @@ namespace SaveList  //Copie du "Program.cs" de l'exemple de l'XML trouvé sur ca
         {
             container.Load();
         }
-
-
+        
         //Issu  XML Serialization sur Campus (lab chap 1)
         /*
          *  Pour afficher un containeur (à appeler quand on clique sur score)
@@ -56,7 +55,6 @@ namespace SaveList  //Copie du "Program.cs" de l'exemple de l'XML trouvé sur ca
             //container.Add(ucPseudo, Ucscore);
             container.Add("Awac", 42);
         }
-
     }
 }
 
@@ -64,18 +62,21 @@ namespace SaveList  //Copie du "Program.cs" de l'exemple de l'XML trouvé sur ca
 //Lors de l'évènement qui doit appeler la sauvegarde (à priori une collision), mettre ceci (ça appelle la fenêtre demandant de remplir le pseudo)
 //La prof l'avais mis dans son main form lors de l'appui sur le bouton add
 /*
-UserEntryForm uef = new UserEntryForm();
-
-            DialogResult dr = uef.ShowDialog();
-            if (dr == DialogResult.OK)
-            {
-                MessageBox.Show("Value = " + uef.TheValue);
-                 //Appel de la création du fichier xml
-            }
-            else
-            {
-                //Rien
-            }
+private void OnclickScore(object sender, EventArgs e)
+{
+    //dans l'exemple DEMO ECE SE c'était "namespace DemoUserEntryForm"
+    UserEntryForm uef = new UserEntryForm();
+    DialogResult dr = uef.ShowDialog();
+    if (dr == DialogResult.OK)
+    {
+        MessageBox.Show("Value = " + uef.TheValue);
+        //Appel de la création du fichier xml
+    }
+    else
+    {
+        //Rien
+    }
+}
 */
 
 //Issu de XML Serialization sur Campus (lab chap 1)
