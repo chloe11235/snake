@@ -107,56 +107,97 @@ namespace Project_Snake
         
         public void moveSnake( int x) // 0: droite, 1: gauche, 2:haut, 3: abs
         {
-            moveSnakeBody();
-            moveSnakeHead(x);
+            bool move=  allowSnakeMove(x);
+            if (move)
+            {
+                moveSnakeBody();
+                moveSnakeHead(x);
+            }           
            
+        }
+
+        public bool allowSnakeMove(int x)
+        {
+            bool move;
+            if (((x == 0 && dir != snakeDir.GAUCHE) || (x == 4 && dir == snakeDir.DROITE)) && gameOn)
+            {
+                move = true;
+            }
+
+            else if (((x == 1 && dir != snakeDir.DROITE) || (x == 4 && dir == snakeDir.GAUCHE)) && gameOn)
+            {
+                move = true;
+            }
+
+
+            else if (((x == 2 && dir != snakeDir.BAS) || (x == 4 && dir == snakeDir.HAUT)) && gameOn)
+            {
+                move = true;
+            }
+
+            else if (((x == 3 && dir != snakeDir.HAUT) || (x == 4 && dir == snakeDir.BAS)) && gameOn)
+            {
+                move = true;
+            }
+            else { move = false; }
+            return move;
         }
 
         public void moveSnakeHead(int x)
         {
-            if (((x == 0 && dir != snakeDir.GAUCHE) || (x == 4 && dir==snakeDir.DROITE)) && gameOn)
+            
+           if (((x == 0 && dir != snakeDir.GAUCHE) || (x == 4 && dir==snakeDir.DROITE)) && gameOn)
             {
                 MySnake.ElementAt(0).Image = global::Project_Snake.Properties.Resources.snake_tete;
-                MySnake.ElementAt(0).PosX = MySnake.ElementAt(0).PosX + 10;            
+                MySnake.ElementAt(0).PosX = MySnake.ElementAt(0).PosX + 10;
                 
                 dir = snakeDir.DROITE;
             }
+           
             else if (((x == 1 && dir != snakeDir.DROITE) || (x == 4 && dir == snakeDir.GAUCHE)) && gameOn)
             {
                 MySnake.ElementAt(0).Image = global::Project_Snake.Properties.Resources.snake_gauche;
                 MySnake.ElementAt(0).PosX = MySnake.ElementAt(0).PosX - 10;
+                
                 dir = snakeDir.GAUCHE;
             }
+           
 
             else if (((x == 2 && dir != snakeDir.BAS) || (x == 4 && dir == snakeDir.HAUT)) && gameOn)
             {
                 MySnake.ElementAt(0).Image = global::Project_Snake.Properties.Resources.snake_haut;
                 MySnake.ElementAt(0).PosY = MySnake.ElementAt(0).PosY - 10;
+            
                 dir = snakeDir.HAUT;
             }
+          
             else if (((x == 3 && dir != snakeDir.HAUT) || (x == 4 && dir == snakeDir.BAS)) && gameOn)
             {
                 MySnake.ElementAt(0).Image = global::Project_Snake.Properties.Resources.snake_bas;
-                MySnake.ElementAt(0).PosY = MySnake.ElementAt(0).PosY + 10;                
+                MySnake.ElementAt(0).PosY = MySnake.ElementAt(0).PosY + 10;
+                
                 dir = snakeDir.BAS;
             }
 
+           
+            
             limiteSnake(MySnake.ElementAt(0));
             MySnake.ElementAt(0).Location = new System.Drawing.Point(MySnake.ElementAt(0).PosX, MySnake.ElementAt(0).PosY);
-
+           
         }
 
          public void moveSnakeBody() 
          {
              int compteur;
-
-             for (compteur = MySnake.Count-1; compteur > 0; compteur--)
-             {
-                 MySnake.ElementAt(compteur).PosX = MySnake.ElementAt(compteur-1).PosX;
-                 MySnake.ElementAt(compteur).PosY = MySnake.ElementAt(compteur-1).PosY;
-                 limiteSnake(MySnake.ElementAt(compteur));
-                 MySnake.ElementAt(compteur).Location = new System.Drawing.Point(MySnake.ElementAt(compteur-1).PosX, MySnake.ElementAt(compteur-1).PosY);
-             }
+             
+                 for (compteur = MySnake.Count - 1; compteur > 0; compteur--)
+                 {
+                     MySnake.ElementAt(compteur).PosX = MySnake.ElementAt(compteur - 1).PosX;
+                     MySnake.ElementAt(compteur).PosY = MySnake.ElementAt(compteur - 1).PosY;
+                     limiteSnake(MySnake.ElementAt(compteur));
+                     MySnake.ElementAt(compteur).Location = new System.Drawing.Point(MySnake.ElementAt(compteur - 1).PosX, MySnake.ElementAt(compteur - 1).PosY);
+                 }
+             
          }
 
          public void limiteSnake( GameElement corps)
