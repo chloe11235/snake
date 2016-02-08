@@ -40,11 +40,11 @@ namespace SaveList
 
         #region Constructeur Declaration
         //Constructeur
-        /*public Save()
+        public Save()
         {
-            this.m_pseudo = (DemoUserControl.UC_Input)"";
+            this.m_pseudo.Text = "";
             this.m_score = 0;
-        }*/
+        }
 
         //Constructeur par paramètres
         public Save(DemoUserControl.UC_Input pseudo, int score)

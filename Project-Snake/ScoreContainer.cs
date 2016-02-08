@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.Windows.Forms;
 
 namespace SaveList
 {
@@ -28,14 +29,19 @@ namespace SaveList
         {
             if (m_saveList.Count == 0) return;
 
-            Console.WriteLine("La liste des scores est: ");
+            /*Console.WriteLine("La liste des scores est: ");
             foreach (Save crt in m_saveList)
             {
                 Console.WriteLine(crt.ToString());
+            }*/
+            MessageBox.Show("la liste des scores est : ");
+            foreach (Save crt in m_saveList)
+            {
+                MessageBox.Show(crt.ToString());
             }
         }
 
-        public bool Save()
+        public bool SaveScore()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Save>));
             using (StreamWriter wr = new StreamWriter("Save.xml"))
