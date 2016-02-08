@@ -320,14 +320,17 @@ namespace Project_Snake
               
                 gameStop = true;
 
+                //Issu de Demo ECE SE
                 //MessageBox.Show("Score= "+score, "colision mur", MessageBoxButtons.OK);
                 //DemoUserControl.UserEntryForm.UcScore = "" + Project_Snake.GameView.Score;
+                //Appel de la fenêtre pour enregistrer les scores
                 DemoUserControl.UserEntryForm uef = new DemoUserControl.UserEntryForm();
                 DialogResult dr = uef.ShowDialog();
                 if (dr == DialogResult.OK)
                 {
                     MessageBox.Show(uef.TheValue);
-                    //Appel de la création du fichier xml
+                    //Affichage d'une fenêtre récapitulative
+                    
                 }
                 else
                 {

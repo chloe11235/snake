@@ -32,7 +32,6 @@
             this.NewGame = new System.Windows.Forms.Button();
             this.Score = new System.Windows.Forms.Button();
             this.MainView = new Project_Snake.GameView();
-            this.UserControl= new DemoUserControl.UserEntryForm();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -56,15 +55,14 @@
             this.Score.UseVisualStyleBackColor = true;
             // 
             // MainView
-             /*
+            // 
             this.MainView.BackColor = System.Drawing.Color.Black;
             this.MainView.GameOn = false;
             this.MainView.GameStop = false;
             this.MainView.Location = new System.Drawing.Point(13, 60);
             this.MainView.Name = "MainView";
-            this.MainView.Score = 0;
             this.MainView.Size = new System.Drawing.Size(300, 100);
-            this.MainView.TabIndex = 3;*/
+            this.MainView.TabIndex = 3;
             // 
             // timer1
             // 
@@ -79,7 +77,6 @@
             this.Controls.Add(this.Score);
             this.Controls.Add(this.NewGame);
             this.Controls.Add(this.MainView);
-          //  this.Controls.Add(this.UserControl);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -90,7 +87,7 @@
 
         private System.Windows.Forms.Button NewGame;
         private System.Windows.Forms.Button Score;
-        
+
         private GameView MainView;
         private DemoUserControl.UserEntryForm UserControl;
         private System.Windows.Forms.Timer timer1;
